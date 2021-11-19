@@ -25,7 +25,7 @@ COPY ${JAR_FILE_PATH} app.jar
 #ENV TZ Asia/Seoul
 #RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
 
-ENTRYPOINT ["java", "-Dspring.profiles.active=${USE_PROFILE}", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-Xms1024m","-Xmx1024m", "-Dspring.profiles.active=${USE_PROFILE}", "-jar", "app.jar"]
 
 # docker build -t docker-example:0.0.1 .
 # docker images #images 명령어로 docker이미지가 제대로 만들어 졌는지 확인한다.
