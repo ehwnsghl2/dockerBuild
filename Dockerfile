@@ -28,7 +28,10 @@ COPY ${JAR_FILE_PATH} app.jar
 ENTRYPOINT ["java", "-Xms1024m","-Xmx1024m", "-Dspring.profiles.active=${USE_PROFILE}", "-jar", "app.jar"]
 
 # docker build -t docker-example:0.0.1 .
+# docker build --tag ehwnsghl2/docker-example:0.0.1 .
 # docker images #images 명령어로 docker이미지가 제대로 만들어 졌는지 확인한다.
 # docker run -p 8080:8080 -e USE_PROFILE=dev docker-example:0.0.1
+# docker push ehwnsghl2/docker-example:0.0.1
+# docker pull ehwnsghl2/docker-example:0.0.1
 
 # 환경설정 한국시간 설정
